@@ -1,0 +1,9 @@
+.git
+.github
+.DS_Store
+backend/node_modules
+backend/dist
+backend/sub-store.min.js
+node_modules
+CHANGELOG.md
+

@@ -162,6 +162,29 @@ SUB_STORE_BACKEND_API_PORT=3000 pnpm run --parallel "/^dev:.*/"
 pnpm bundle:esbuild
 ```
 
+## Docker
+
+本仓库提供了可直接运行的后端镜像和 Compose 配置。镜像默认监听容器端口 `3000`，数据目录为 `/opt/app/data`。
+
+```bash
+docker pull e54385991/sub-store:2.36.40
+docker compose up -d
+```
+
+常用配置通过环境变量完成：
+
+- `SUB_STORE_PORT`：宿主机端口，默认 `3000`。
+- `SUB_STORE_FRONTEND_BACKEND_PATH`：后端路径，默认 `/sub-store`。
+- `SUB_STORE_BACKEND_PREFIX`：是否启用后端路径前缀，默认 `true`。
+- `SUB_STORE_CORS_ALLOWED_ORIGINS`：CORS 来源列表，多个来源用逗号分隔，默认 `*`。
+- `SUB_STORE_DATA_DIR`：宿主机数据目录，默认 `./data`。
+
+该镜像只包含 Sub-Store 后端 API。前端可使用官方前端 `https://sub-store.vercel.app/`，或通过 `SUB_STORE_FRONTEND_PATH` 配置自有前端并启用合并模式。
+
+### 1Panel
+
+`appstore/sub-store` 是可导入 1Panel 本地应用的应用包，安装表单支持外部端口、后端路径、CORS 和定时任务配置。应用数据会持久化到 1Panel 应用目录下的 `data` 目录。
+
 ## LICENSE
 
 This project is under the GPL V3 LICENSE.

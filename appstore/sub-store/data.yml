@@ -1,0 +1,27 @@
+name: Sub-Store
+tags:
+    - 实用工具
+title: 高级订阅管理工具
+description: 支持多种代理客户端格式转换、订阅管理和订阅托管的自托管后端
+additionalProperties:
+    key: sub-store
+    name: Sub-Store
+    tags:
+        - Tool
+    shortDescZh: 高级订阅管理工具的自托管后端
+    shortDescEn: Self-hosted backend for advanced subscription management
+    description:
+        en: Self-hosted backend for subscription conversion, management, and hosting.
+        zh: 支持订阅转换、管理和托管的自托管后端。
+    type: website
+    crossVersionUpdate: false
+    limit: 0
+    recommend: 0
+    batchInstallSupport: true
+    website: https://sub-store.vercel.app/
+    github: https://github.com/sub-store-org/Sub-Store
+    document: https://github.com/sub-store-org/Sub-Store/wiki
+    architectures:
+        - amd64
+        - arm64
+

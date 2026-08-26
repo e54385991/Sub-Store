@@ -1,0 +1,70 @@
+additionalProperties:
+    formFields:
+        - default: 3000
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: External port
+          labelZh: 外部端口
+          required: true
+          rule: paramPort
+          type: number
+          label:
+              en: External port
+              zh: 外部端口
+        - default: "true"
+          edit: true
+          envKey: SUB_STORE_BACKEND_PREFIX
+          labelEn: Enable backend path prefix
+          labelZh: 启用后端路径前缀
+          required: true
+          type: select
+          values:
+              - label: 开启
+                value: "true"
+              - label: 关闭
+                value: "false"
+          label:
+              en: Enable backend path prefix
+              zh: 启用后端路径前缀
+        - default: /sub-store
+          edit: true
+          envKey: SUB_STORE_FRONTEND_BACKEND_PATH
+          labelEn: Backend path
+          labelZh: 后端路径
+          required: true
+          rule: paramCommon
+          type: text
+          label:
+              en: Backend path
+              zh: 后端路径
+        - default: "*"
+          edit: true
+          envKey: SUB_STORE_CORS_ALLOWED_ORIGINS
+          labelEn: CORS allowed origins
+          labelZh: CORS 允许来源
+          required: true
+          type: text
+          label:
+              en: CORS allowed origins
+              zh: CORS 允许来源
+        - default: ""
+          edit: true
+          envKey: SUB_STORE_BACKEND_SYNC_CRON
+          labelEn: Subscription sync cron (optional)
+          labelZh: 订阅同步定时任务（可选）
+          required: false
+          type: text
+          label:
+              en: Subscription sync cron (optional)
+              zh: 订阅同步定时任务（可选）
+        - default: ""
+          edit: true
+          envKey: SUB_STORE_PRODUCE_CRON
+          labelEn: Artifact produce cron (optional)
+          labelZh: 产物生成定时任务（可选）
+          required: false
+          type: text
+          label:
+              en: Artifact produce cron (optional)
+              zh: 产物生成定时任务（可选）
+
