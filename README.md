@@ -164,10 +164,10 @@ pnpm bundle:esbuild
 
 ## Docker
 
-本仓库提供了可直接运行的后端镜像和 Compose 配置。镜像默认监听容器端口 `3000`，数据目录为 `/opt/app/data`。
+本仓库提供了前后端合一的 Docker 镜像和 Compose 配置。镜像默认监听容器端口 `3000`，数据目录为 `/opt/app/data`。容器根路径提供 Web 前端，配置的后端路径提供 API。
 
 ```bash
-docker pull e54385991/sub-store:2.36.40
+docker pull e54385991/sub-store:latest
 docker compose up -d
 ```
 
@@ -175,11 +175,10 @@ docker compose up -d
 
 - `SUB_STORE_PORT`：宿主机端口，默认 `3000`。
 - `SUB_STORE_FRONTEND_BACKEND_PATH`：后端路径，默认 `/sub-store`。
-- `SUB_STORE_BACKEND_PREFIX`：是否启用后端路径前缀，默认 `true`。
 - `SUB_STORE_CORS_ALLOWED_ORIGINS`：CORS 来源列表，多个来源用逗号分隔，默认 `*`。
 - `SUB_STORE_DATA_DIR`：宿主机数据目录，默认 `./data`。
 
-该镜像只包含 Sub-Store 后端 API。前端可使用官方前端 `https://sub-store.vercel.app/`，也可以单独部署自有前端，并将后端地址配置为上面的 API 路径。
+访问 `http://服务器地址:端口/` 使用内置前端，API 地址为 `http://服务器地址:端口/sub-store/api/`（路径可配置）。镜像内置官方前端资源，来源为 [Sub-Store-Front-End](https://github.com/sub-store-org/Sub-Store-Front-End)。
 
 ### 1Panel
 
