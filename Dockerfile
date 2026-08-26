@@ -2,7 +2,9 @@
 
 ARG NODE_VERSION=26.5.0
 
-FROM node:${NODE_VERSION}-alpine AS build
+# The output is architecture-independent JavaScript; keep Node build steps native
+# so multi-platform builds do not depend on emulated Node processes.
+FROM --platform=$BUILDPLATFORM node:${NODE_VERSION}-alpine AS build
 
 WORKDIR /app/backend
 

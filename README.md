@@ -179,7 +179,7 @@ docker compose up -d
 - `SUB_STORE_CORS_ALLOWED_ORIGINS`：CORS 来源列表，多个来源用逗号分隔，默认 `*`。
 - `SUB_STORE_DATA_DIR`：宿主机数据目录，默认 `./data`。
 
-该镜像只包含 Sub-Store 后端 API。前端可使用官方前端 `https://sub-store.vercel.app/`，或通过 `SUB_STORE_FRONTEND_PATH` 配置自有前端并启用合并模式。
+该镜像只包含 Sub-Store 后端 API。前端可使用官方前端 `https://sub-store.vercel.app/`，也可以单独部署自有前端，并将后端地址配置为上面的 API 路径。
 
 ### 1Panel
 

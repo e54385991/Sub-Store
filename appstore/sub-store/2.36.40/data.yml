@@ -30,13 +30,12 @@ additionalProperties:
           edit: true
           envKey: SUB_STORE_FRONTEND_BACKEND_PATH
           labelEn: Backend path
-          labelZh: 后端路径
+          labelZh: 后端路径（以 / 开头，长度 2-64）
           required: true
-          rule: paramCommon
           type: text
           label:
               en: Backend path
-              zh: 后端路径
+              zh: 后端路径（以 / 开头，长度 2-64）
         - default: "*"
           edit: true
           envKey: SUB_STORE_CORS_ALLOWED_ORIGINS
@@ -67,4 +66,3 @@ additionalProperties:
           label:
               en: Artifact produce cron (optional)
               zh: 产物生成定时任务（可选）
-
